@@ -54,6 +54,12 @@ export default function Mint() {
         <div>
             <Header />
             <h1 className={styles['center-text']}>Mint</h1>
+            <div>
+                <h3>your nft's</h3>
+                <div>
+                    {mintedNFTs.map((nft, index) => {<a href={nft}>NFT #{index}</a>})}
+                </div>
+            </div>
             <div className={styles['center-container']}>
                 <input type="text" placeholder="Enter address" value={address} onChange={(e) => setAddress(e.target.value)} />
                 <br />
