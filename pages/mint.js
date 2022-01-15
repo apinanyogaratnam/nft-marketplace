@@ -1,6 +1,7 @@
 import styles from '../styles/Home.module.css';
 import { useState } from 'react';
 import Image from 'next/image';
+import Header from './components/header';
 
 export default function Mint() {
     const [address, setAddress] = useState('');
@@ -17,6 +18,7 @@ export default function Mint() {
 
     return (
         <div>
+            <Header />
             <h1 className={styles['center-text']}>Mint</h1>
             <div className={styles['center-container']}>
                 <input type="text" placeholder="Enter address" value={address} onChange={(e) => setAddress(e.target.value)} />
@@ -29,7 +31,7 @@ export default function Mint() {
                         return (
                             <div key={index}>
                                 <img src={nft} alt="" height={200} width={200} />
-                                <button>Mint Now</button>
+                                <button onClick={mintNow}>Mint Now</button>
                             </div>
                         )
                     })
