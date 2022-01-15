@@ -1,18 +1,8 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { useRouter } from 'next/router';
+import Header from './components/header';
 
 export default function Home() {
-  const router = useRouter();
-
-  const homeHandler = () => {
-    router.push('/');
-  };
-
-  const mintHandler = () => {
-    router.push('/mint');
-  };
-
   return (
     <div className={styles.container}>
       <Head>
@@ -21,10 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles['center-container']}>
-        <button onClick={homeHandler}>Home</button>
-        <button onClick={mintHandler}>Mint</button>
-      </div>
+      <Header />
     </div>
   )
 }
