@@ -15,7 +15,7 @@ export default function Home() {
       <h1>Welcome to our NFT Market Place</h1>
       <h2>{`Top grossing NFT's`}</h2>
       <div className={styles.grid}>
-        hi  
+        display top grossing nft's here 
       </div>
     </div>
   )
