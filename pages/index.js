@@ -37,6 +37,7 @@ export default function Home() {
       <div>
           {JSON.stringify(covalentData)}
       </div>
+      <button onClick={() => {navigator.clipboard.writeText(JSON.stringify(covalentData))}}>copy data</button>
     </div>
   )
 }
