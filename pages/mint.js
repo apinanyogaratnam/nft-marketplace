@@ -50,6 +50,7 @@ export default function Mint() {
           description: res.data.description,
           address: res.data.mint_to_address
         }]));
+        console.log('stored nft data successfully', cid);
     };
 
     return (
