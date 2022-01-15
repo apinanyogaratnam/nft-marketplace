@@ -37,6 +37,7 @@ export default function Mint() {
         };
 
         const res = await axios.post(urlToMint, body, auth);
+        console.log(res.data.transaction_external_url);
         setMintedNFTs([...mintedNFTs, res.data.transaction_external_url]);
 
         // filecoin nft storage implementation
@@ -71,7 +72,7 @@ export default function Mint() {
                         return (
                             <div key={index}>
                                 <img src={nft} alt="" height={200} width={200} />
-                                <button onClick={() => mintNow(index)}>Mint Now</button>
+                                <button onClick={(e) => {e.preventDefault(); mintNow(index);}}>Mint Now</button>
                             </div>
                         )
                     })
