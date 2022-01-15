@@ -40,7 +40,7 @@ export default function Mint() {
         setMintedNFTs([...mintedNFTs, res.data.transaction_external_url]);
 
         // filecoin nft storage implementation
-        const client = new NFTStorage({ token: process.env.REACT_APP_NFT_STORAGE_API_KEY });
+        const client = new NFTStorage({ token: process.env.NEXT_APP_NFT_STORAGE_API_KEY });
         const cid = await client.storeBlob(new Blob([{
           chain: res.data.chain,
           contract_address: res.data.contract_address,
@@ -55,7 +55,7 @@ export default function Mint() {
             <Header />
             <h1 className={styles['center-text']}>Mint</h1>
             <div>
-                <h3>your nft's</h3>
+                <h3>{`your nft's`}</h3>
                 <div>
                     {mintedNFTs.map((nft, index) => {<a href={nft}>NFT #{index}</a>})}
                 </div>
