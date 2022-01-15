@@ -1,6 +1,7 @@
 import styles from '../styles/Home.module.css';
 import { useState } from 'react';
-import Image from 'next/image';
+import { NFTStorage, File, Blob } from "nft.storage";
+import axios from 'axios';
 import Header from './components/header';
 
 export default function Mint() {
